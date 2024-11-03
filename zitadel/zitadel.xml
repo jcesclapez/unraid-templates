@@ -23,7 +23,7 @@ In the above username, replace localhost with your configured external domain, i
   <Category>Security:</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL/>
-  <Icon>https://raw.githubusercontent.com/jcesclapez/unraid-templates/3b1fded310eadc81b3e42f511c596a172cad8200/zitadel/zitadel-logo-darkdesign.png</Icon>
+  <Icon>https://raw.githubusercontent.com/jcesclapez/unraid-templates/refs/heads/main/zitadel/zitadel-logo-darkdesign.png</Icon>
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs>start-from-init --masterkey "MasterkeyNeedsToHave32Characters" --tlsMode disabled</PostArgs>
   <CPUset/>
