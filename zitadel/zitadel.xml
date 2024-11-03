@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Container version="2">
   <Name>zitadel</Name>
-  <Repository>ghcr.io/zitadel/zitadel</Repository>
+  <Repository>ghcr.io/zitadel/zitadel:latest</Repository>
   <Registry>https://github.com/zitadel/zitadel/pkgs/container/zitadel</Registry>
   <Network>bridge</Network>
   <MyIP/>
