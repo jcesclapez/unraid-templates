@@ -13,31 +13,34 @@
 &#xD;
 Working with Postgres 16 and 17.&#xD;
 &#xD;
+Please replace --masterkey &#x201C;MasterkeyNeedsToHave32Characters&#x201D; in Post Arguments with a safe one.&#xD;
 &#xD;
 Default username: zitadel-admin@zitadel.localhost &#xD;
 Default password: Password1!&#xD;
-In the above username, replace localhost with your configured external domain, if any. e.g. with zitadel-admin@zitadel.sso.my.domain.tld</Overview>
+In the above username, replace localhost with your configured external domain, if any. e.g. with zitadel-admin@zitadel.sso.my.domain.tld&#xD;
+&#xD;
+</Overview>
   <Category>Security:</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL/>
-  <Icon>https://statuspal.io/uploads/status_pages/logo/original/7913-5155-zitadel-logo-solo-darkdesign.png?v=63826687284</Icon>
-  <ExtraParams/>
+  <Icon>https://raw.githubusercontent.com/jcesclapez/unraid-templates/3b1fded310eadc81b3e42f511c596a172cad8200/zitadel/zitadel-logo-darkdesign.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs>start-from-init --masterkey "MasterkeyNeedsToHave32Characters" --tlsMode disabled</PostArgs>
   <CPUset/>
-  <DateInstalled>1730579803</DateInstalled>
+  <DateInstalled>1730594378</DateInstalled>
   <DonateText/>
   <DonateLink/>
   <Requires/>
-  <Config Name="DATABASE POSTGRES HOST" Target="ZITADEL_DATABASE_POSTGRES_HOST" Default="db" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">db</Config>
-  <Config Name="DATABASE POSTGRES PORT" Target="ZITADEL_DATABASE_POSTGRES_PORT" Default="5432" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">5432</Config>
+  <Config Name="DATABASE POSTGRES HOST" Target="ZITADEL_DATABASE_POSTGRES_HOST" Default="db" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">db</Config>
+  <Config Name="DATABASE POSTGRES PORT" Target="ZITADEL_DATABASE_POSTGRES_PORT" Default="5432" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">5432</Config>
   <Config Name="DATABASE POSTGRES " Target="ZITADEL_DATABASE_POSTGRES_DATABASE" Default="zitadel" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">zitadel</Config>
   <Config Name="DATABASE POSTGRES USER USERNAME" Target="ZITADEL_DATABASE_POSTGRES_USER_USERNAME" Default="zitadel" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">zitadel</Config>
-  <Config Name="DATABASE POSTGRES USER PASSWORD" Target="ZITADEL_DATABASE_POSTGRES_USER_PASSWORD" Default="zitadel" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">zitadel</Config>
+  <Config Name="DATABASE POSTGRES USER PASSWORD" Target="ZITADEL_DATABASE_POSTGRES_USER_PASSWORD" Default="zitadel" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="true">zitadel</Config>
   <Config Name="DATABASE POSTGRES USER SSL MODE" Target="ZITADEL_DATABASE_POSTGRES_USER_SSL_MODE" Default="disable" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">disable</Config>
-  <Config Name="DATABASE POSTGRES ADMIN USERNAME" Target="ZITADEL_DATABASE_POSTGRES_ADMIN_USERNAME" Default="postgres" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
-  <Config Name="DATABASE POSTGRES ADMIN PASSWORD" Target="ZITADEL_DATABASE_POSTGRES_ADMIN_PASSWORD" Default="postgres" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">postgres</Config>
+  <Config Name="DATABASE POSTGRES ADMIN USERNAME" Target="ZITADEL_DATABASE_POSTGRES_ADMIN_USERNAME" Default="postgres" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">postgres</Config>
+  <Config Name="DATABASE POSTGRES ADMIN PASSWORD" Target="ZITADEL_DATABASE_POSTGRES_ADMIN_PASSWORD" Default="postgres" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true">postgres</Config>
   <Config Name="DATABASE POSTGRES ADMIN SSL MODE" Target="ZITADEL_DATABASE_POSTGRES_ADMIN_SSL_MODE" Default="disable" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">disable</Config>
   <Config Name="EXTERNAL SECURE" Target="ZITADEL_EXTERNALSECURE" Default="false" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
-  <Config Name="EXTERNAL DOMAIN" Target="ZITADEL_EXTERNALDOMAIN" Default="localhost" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false">localhost</Config>
-  <Config Name="WEB UI" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="EXTERNAL DOMAIN" Target="ZITADEL_EXTERNALDOMAIN" Default="localhost" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">localhost</Config>
+  <Config Name="WEB UI" Target="8080" Default="8080" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false">8080</Config>
 </Container>
