@@ -43,7 +43,7 @@ add action=drop src-address-list=crowdsec chain=forward in-interface=your-wan-in
   <Config Name="CROWDSEC URL" Target="CROWDSEC_URL" Default="http://crowdsec:8080/" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://crowdsec:8080/</Config>
   <Config Name="MIKROTIK HOST" Target="MIKROTIK_HOST" Default="your-ip-mikrotik" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-ip-mikrotik</Config>
   <Config Name="MIKROTIK USER" Target="MIKROTIK_USER" Default="your-mirkotik-user" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-mirkotik-user</Config>
-  <Config Name="MIKROTIK PASS" Target="MIKROTIK_PASS" Default="your-mikrotik-pass" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-mikrotik-pass</Config>
+  <Config Name="MIKROTIK PASS" Target="MIKROTIK_PASS" Default="your-mikrotik-pass" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="true">your-mikrotik-pass</Config>
   <Config Name="MIKROTIK IPV6" Target="MIKROTIK_IPV6" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="MIKROTIK TLS" Target="MIKROTIK_TLS" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
   <Config Name="CROWDSEC ORIGINS" Target="CROWDSEC_ORIGINS" Default="none" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">none</Config>
