@@ -1,1 +1,51 @@
-
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>crowdsec-mikrotik-bouncer</Name>
+  <Repository>ghcr.io/funkolab/cs-mikrotik-bouncer:latest</Repository>
+  <Registry>https://github.com/funkolab/cs-mikrotik-bouncer/pkgs/container/cs-mikrotik-bouncer</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/funkolab/cs-mikrotik-bouncer/pkgs/container/cs-mikrotik-bouncer</Support>
+  <Project>https://app.crowdsec.net/hub/author/funkolab/remediation-components/cs-mikrotik-bouncer</Project>
+  <Overview>This repository aim to implement a CrowdSec bouncer for the router Mikrotik to block malicious IP to access your services. For this it leverages Mikrotik API to populate a dynamic Firewall Address List.</Overview>
+  <Category>Security:</Category>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/jcesclapez/unraid-templates/refs/heads/main/crowdsec-mikrotik-bouncer/crowdsec_mikrotik_logo.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1733745304</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires>Prerequisites:&#xD;
+Generate a bouncer API key following CrowdSec documentation https://doc.crowdsec.net/docs/cscli/cscli_bouncers_add/&#xD;
+cscli bouncers add Mikrotik-0&#xD;
+&#xD;
+Procedure:&#xD;
+1    Get a bouncer API key from your CrowdSec with command cscli bouncers add mikrotik-bouncer&#xD;
+2    Copy the API key printed. You WON'T be able the get it again.&#xD;
+3    Paste this API key as the value for bouncer environment variable CROWDSEC_BOUNCER_API_KEY, instead of "MyApiKey"&#xD;
+4    Start bouncer with docker-compose up bouncer in the example directory&#xD;
+5    Create IP drop Filter Rules in input and forward Chain with the crowdsec Source Address List&#xD;
+6    Create IPv6 drop Filter Rules in input and forward Chain with the crowdsec Source Address List (if IPv6 used)&#xD;
+&#xD;
+/ip/firewall/filter/&#xD;
+add action=drop src-address-list=crowdsec chain=input  in-interface=your-wan-interface place-before=0 comment="crowdsec input drop rules"&#xD;
+add action=drop src-address-list=crowdsec chain=forward in-interface=your-wan-interface place-before=0 comment="crowdsec forward drop rules"&#xD;
+&#xD;
+/ipv6/firewall/filter/&#xD;
+add action=drop src-address-list=crowdsec chain=input  in-interface=your-wan-interface place-before=0 comment="crowdsec input drop rules"&#xD;
+add action=drop src-address-list=crowdsec chain=forward in-interface=your-wan-interface place-before=0 comment="crowdsec forward drop rules"</Requires>
+  <Config Name="CROWDSEC BOUNCER API KEY" Target="CROWDSEC_BOUNCER_API_KEY" Default="your-api-key" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-api-key</Config>
+  <Config Name="CROWDSEC URL" Target="CROWDSEC_URL" Default="http://crowdsec:8080/" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">http://crowdsec:8080/</Config>
+  <Config Name="MIKROTIK HOST" Target="MIKROTIK_HOST" Default="your-ip-mikrotik" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-ip-mikrotik</Config>
+  <Config Name="MIKROTIK USER" Target="MIKROTIK_USER" Default="your-mirkotik-user" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-mirkotik-user</Config>
+  <Config Name="MIKROTIK PASS" Target="MIKROTIK_PASS" Default="your-mikrotik-pass" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false">your-mikrotik-pass</Config>
+  <Config Name="MIKROTIK IPV6" Target="MIKROTIK_IPV6" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="MIKROTIK TLS" Target="MIKROTIK_TLS" Default="true" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">true</Config>
+  <Config Name="CROWDSEC ORIGINS" Target="CROWDSEC_ORIGINS" Default="none" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">none</Config>
+  <Config Name="LOG LEVEL" Target="LOG_LEVEL" Default="1" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+</Container>
