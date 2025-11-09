@@ -12,14 +12,12 @@
   <Overview>Open Source Identity and Access Management.</Overview>
   <Category>Security: Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
-  <TemplateURL>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/keycloak.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/A75G/docker-templates/master/templates/icons/keycloak.png</Icon>
+  <TemplateURL>https://raw.githubusercontent.com/jcesclapez/unraid-templates/refs/heads/main/keycloak/keycloak.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/jcesclapez/unraid-templates/refs/heads/main/keycloak/keycloak.png</Icon>
   <ExtraParams/>
   <PostArgs>start</PostArgs>
   <CPUset/>
   <DateInstalled>1762697309</DateInstalled>
-  <DonateText>If you appreciate my work, donations are greatly appreciated!</DonateText>
-  <DonateLink>https://buymeacoffee.com/a75g</DonateLink>
   <Requires/>
   <Config Name="Port" Target="8080" Default="8080" Mode="tcp" Description="Port" Type="Port" Display="always" Required="true" Mask="false">8080</Config>
   <Config Name="Keycloak Hostname" Target="KC_HOSTNAME" Default="" Mode="" Description="Put your IP:PORT (192.168.100.100) or Hostname (auth.exmaple.com)" Type="Variable" Display="always" Required="true" Mask="false"/>
