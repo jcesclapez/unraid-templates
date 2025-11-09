@@ -9,7 +9,10 @@
   <Privileged>false</Privileged>
   <Support>https://keycloak.discourse.group/</Support>
   <Project>https://www.keycloak.org/</Project>
-  <Overview>Open Source Identity and Access Management.</Overview>
+  <Overview>Open Source Identity and Access Management&#13;
+&#13;
+Add authentication to applications and secure services with minimum effort.&#13;
+No need to deal with storing users or authenticating users. </Overview>
   <Category>Security: Tools:Utilities</Category>
   <WebUI>http://[IP]:[PORT:8080]/</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/jcesclapez/unraid-templates/refs/heads/main/keycloak/keycloak.xml</TemplateURL>
